@@ -1,0 +1,25 @@
+{
+  "userList": [
+    {
+      "id": 1,
+      "name": "Bruce Wayne",
+      "email": "bruce@gmail.com",
+      "avatar": "/batman.jpg",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "name": "Clark Kent",
+      "email": "ck@gmail.com",
+      "avatar": "/ck.jpeg",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "name": "Diana Prince",
+      "email": "diana@gmail.com",
+      "avatar": "/diana.jpg",
+      "password": "password"
+    }
+  ]
+}
