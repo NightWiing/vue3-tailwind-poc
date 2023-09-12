@@ -16,7 +16,9 @@ export default {
         'btn': '#6E58F1',
         'side-nav': '#282B42',
         'pink': '#BF51C1',
-        'sea': '#51C1C1'
+        'sea': '#51C1C1',
+        'icon-g': ['linear-gradient(0deg, #E5E7F9, #E5E7F9)',
+        'linear-gradient(0deg, #FAFAFF, #FAFAFF)']
       },
       boxShadow: {
         'nav': '0px 2px 4px 0px rgba(141, 143, 169, 0.1)',
@@ -24,7 +26,7 @@ export default {
       }
     },
     fontFamily: {
-      'dm-sans': ['DM Sans', 'sans-serif']
+      'dm-sans': ['DM Sans']
     }
   },
   plugins: [],

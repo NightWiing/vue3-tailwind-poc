@@ -47,7 +47,8 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       meta: {
-        layout: AuthLayout
+        layout: AuthLayout,
+        requiresAuth: false
       },
       component: () => import('@/views/LogIn.vue')
     }
@@ -57,9 +58,12 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const store = useUserStore()
   if (to.meta.requiresAuth && !store.isLoggedIn) {
-    next({ name: 'login' })
+    if (store.isLoggedIn) next()
+    else next({ name: 'login' })
   } else {
-    next()
+    if (store.isLoggedIn && to.name !== 'login') next()
+    else if (!store.isLoggedIn) next()
+    else next({ name: 'email-campaign' })
   }
 })
 
