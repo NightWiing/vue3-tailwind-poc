@@ -5,7 +5,10 @@
         <tr>
           <th>
             <div class="pl-3 text-left py-4">
-              <CheckBox />
+              <CheckBox
+                v-model="headerCheckbox"
+                @input="$emit('select-all', $event)"
+              />
             </div>
           </th>
           <th colspan="2">
@@ -152,6 +155,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import CheckBox from './CheckBox.vue';
 import PauseIcon from '@/components/icons/PauseIcon.vue';
 import EditIcon from '@/components/icons/EditIcon.vue';
@@ -163,6 +167,8 @@ import CircularProgress from './CircularProgress.vue'
 import ErrorIcon from '@/components/icons/ErrorIcon.vue'
 
 defineProps(['data'])
+
+const headerCheckbox = ref(false)
 </script>
 
 <style scoped>

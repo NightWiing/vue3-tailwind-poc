@@ -2,7 +2,7 @@
   <div>
     <Header />
     <SidebarNav />
-    <div class="ml-[230px]">
+    <div class="ml-[230px] pt-20">
       <slot />
     </div>
   </div>

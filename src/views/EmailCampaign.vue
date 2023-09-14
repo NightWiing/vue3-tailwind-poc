@@ -5,8 +5,9 @@
       <div class="flex items-center">
         <BaseInput
           v-model="search"
-          class="mr-16 w-[264px]"
+          class="mr-[29px] w-[264px]"
           placeholder="Search Campaign"
+          :icon="true"
           @input="searchCampaign($event)"
         >
           <template v-slot:leftIcon>
@@ -21,7 +22,10 @@
         </BaseButton>
       </div>
     </div>
-    <CampaignTable :data="data" />
+    <CampaignTable
+      :data="data"
+      @select-all="selectAll($event)"
+    />
   </div>
 </template>
 
@@ -38,10 +42,22 @@ const search = ref('')
 
 const searchCampaign = (val: any) => {
   if (val.target.value.length >= 3) {
-    const res = data.value.filter(d => d.name.toLocaleLowerCase().includes(val.target.value))
+    const res = data.value.filter(d => d.name.toLocaleLowerCase().includes(val.target.value.toLocaleLowerCase()))
     data.value = res;
   } else if (val.target.value.length === 0) {
     data.value = campaigns
+  }
+}
+
+function selectAll(val: any) {
+  if (val) {
+    for (let index = 0; index < data.value.length; index++) {
+      data.value[index].isChecked = false;
+    }
+  } else {
+    for (let index = 0; index < data.value.length; index++) {
+      data.value[index].isChecked = true;
+    }
   }
 }
 </script>

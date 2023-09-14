@@ -13,7 +13,8 @@
       v-model="modelValue"
       :type="type"
       :placeholder="placeholder"
-      class="border border-[#C6C7DB] indent-6 rounded-[3px] bg-gray-50 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary block w-full p-2.5"
+      :class="icon ? 'indent-6' : ''"
+      class="border border-[#C6C7DB] rounded-[3px] bg-gray-50 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary block w-full p-2.5"
       @input="$emit('input', $event)"
     >
   </div>

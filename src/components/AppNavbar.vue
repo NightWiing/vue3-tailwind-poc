@@ -1,6 +1,6 @@
 <template>
   <!-- Navbar -->
-  <nav class="bg-main flex items-center justify-between py-6 px-[18px] shadow-nav">
+  <nav class="bg-main z-10 flex items-center justify-between py-6 px-[18px] shadow-nav fixed w-full top-0">
     <img
       class="w-40"
       src="/logo.svg"
